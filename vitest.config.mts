@@ -1,19 +1,18 @@
 import path from 'node:path'
 import { defineConfig } from 'vitest/config'
 
-// Mirrors the `paths` in tsconfig.json.
-const alias = {
-  '@payload-config': path.resolve(import.meta.dirname, 'src/payload.config.ts'),
-  '@': path.resolve(import.meta.dirname, 'src'),
-}
-
 export default defineConfig({
+  // Mirrors the `paths` in tsconfig.json. Inline projects inherit the root config.
+  resolve: {
+    alias: {
+      '@payload-config': path.resolve(import.meta.dirname, 'src/payload.config.ts'),
+      '@': path.resolve(import.meta.dirname, 'src'),
+    },
+  },
   test: {
-    clearMocks: true,
     reporters: process.env.CI ? ['default', 'github-actions'] : ['default'],
     projects: [
       {
-        resolve: { alias },
         test: {
           name: 'unit',
           environment: 'node',
@@ -27,7 +26,6 @@ export default defineConfig({
         },
       },
       {
-        resolve: { alias },
         test: {
           name: 'int',
           environment: 'node',

@@ -1,2 +1,3 @@
+# Integration tests need PostgreSQL and run in CI; keep pushes fast and dependency-free.
 pnpm type-check
-pnpm test
+pnpm test:unit

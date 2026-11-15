@@ -8,7 +8,7 @@ if (!existsSync(envFile)) {
   throw new Error(`Missing ${envFile}. Copy .env.test.example to .env.test before running tests.`)
 }
 
-const result = dotenv.config({ path: envFile, override: true })
+const result = dotenv.config({ path: envFile, override: true, quiet: true })
 
 if (result.error) {
   throw result.error

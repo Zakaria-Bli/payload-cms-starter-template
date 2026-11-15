@@ -127,7 +127,7 @@ Git hooks:
 
 - **pre-commit:** branch-name check (`type/description`, `main`, `develop`, `staging`) and lint-staged.
 - **commit-msg:** Conventional Commits.
-- **pre-push:** type-check and tests.
+- **pre-push:** type-check and unit tests. Integration tests need PostgreSQL, so they run in CI (and locally with `pnpm test`).
 
 ## Production
 
