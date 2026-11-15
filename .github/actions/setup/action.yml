@@ -1,0 +1,20 @@
+name: Setup Node and pnpm
+
+description: Install the pinned toolchain and dependencies from the lockfile.
+
+runs:
+  using: composite
+  steps:
+    - name: Setup pnpm
+      # Version comes from `packageManager` in package.json.
+      uses: pnpm/action-setup@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: .node-version
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile
