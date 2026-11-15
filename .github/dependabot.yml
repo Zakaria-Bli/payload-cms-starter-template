@@ -12,6 +12,14 @@ updates:
       - dependency-name: '@types/node'
         versions:
           - '>=25'
+      # eslint-config-next's react, jsx-a11y and import plugins only support ESLint 9.
+      # Remove once they accept ESLint 10 (see allowedDeprecatedVersions in pnpm-workspace.yaml).
+      - dependency-name: eslint
+        versions:
+          - '>=10'
+      - dependency-name: '@eslint/js'
+        versions:
+          - '>=10'
     groups:
       payload:
         patterns:
