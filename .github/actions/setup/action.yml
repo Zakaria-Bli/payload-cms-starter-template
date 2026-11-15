@@ -7,7 +7,7 @@ runs:
   steps:
     - name: Setup pnpm
       # Version comes from `packageManager` in package.json.
-      uses: pnpm/action-setup@v4
+      uses: pnpm/action-setup@v6
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
