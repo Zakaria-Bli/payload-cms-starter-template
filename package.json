@@ -67,7 +67,7 @@
     "@types/node": "24.19.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@vitest/coverage-v8": "4.1.12",
+    "@vitest/coverage-v8": "5.1.0",
     "dotenv": "16.4.7",
     "eslint": "9.39.5",
     "eslint-config-next": "16.4.6",
@@ -75,6 +75,6 @@
     "lint-staged": "17.6.0",
     "prettier": "3.9.9",
     "typescript": "5.7.3",
-    "vitest": "4.1.12"
+    "vitest": "5.1.0"
   }
 }
